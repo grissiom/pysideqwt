@@ -6,3 +6,4 @@ Testing/
 qwt/PySideQwt/
 
 *.so
+*.log

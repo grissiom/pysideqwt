@@ -13,6 +13,7 @@ from PySide.QtGui import *
 from PySideQwt import QwtPlot
 from PySideQwt import QwtPlotCurve
 from PySideQwt import QwtPlotGrid
+from PySideQwt import QwtPlotPanner
 
 import PySideQwt as qwt
 
@@ -39,6 +40,11 @@ class QwtTest(unittest.TestCase):
         curve.setData([1,2,3], [1, 4, 9])
         # curve.setData(x, y)
         plot.show()
+
+        #pickers
+        panner = QwtPlotPanner(plot.canvas())
+        panner.setMouseButton (Qt.LeftButton)
+        
         app.exec_()
 
 if __name__ == '__main__':

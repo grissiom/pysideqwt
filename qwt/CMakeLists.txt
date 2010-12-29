@@ -46,8 +46,8 @@ set(qwt_SRC
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtmathmltextengine_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtmetricsmap_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpainter_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpanner_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpicker_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpanner_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpicker_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpickerclickpointmachine_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpickerclickrectmachine_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpickerdragpointmachine_wrapper.cpp
@@ -56,23 +56,23 @@ set(qwt_SRC
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpickerpolygonmachine_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplaintextengine_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplot_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotcanvas_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotcanvas_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotcurve_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotdict_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotgrid_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotitem_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotlayout_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotmagnifier_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotmarker_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotpanner_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotpicker_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotmarker_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotpanner_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotpicker_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotprintfilter_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotrasteritem_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotrescaler_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotscaleitem_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotspectrogram_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotsvgitem_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotzoomer_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotzoomer_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpolygonfdata_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtrasterdata_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtrichtextengine_wrapper.cpp
