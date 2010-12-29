@@ -36,9 +36,9 @@ set(qwt_SRC
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwteventpattern_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtintervaldata_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtknob_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlegend_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlegend_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlegenditem_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlegenditemmanager_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlegenditemmanager_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlinearcolormap_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlinearscaleengine_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlog10scaleengine_wrapper.cpp

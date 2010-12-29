@@ -4,7 +4,7 @@
     <load-typesystem name="typesystem_gui_common.xml" generate="no" />
 
     <object-type name="QwtPlot">
-      <enum-type name="Axis" /> 
+      <enum-type name="Axis" />
       <enum-type name="LegendPosition" />
     </object-type>
 
@@ -52,9 +52,11 @@
     <!-- <object-type name="QwtEventPattern" /> -->
     <!-- <object-type name="QwtIntervalData" /> -->
     <!-- <object-type name="QwtKnob" /> -->
-    <!-- <object-type name="QwtLegend" /> -->
+    <object-type name="QwtLegend">
+        <enum-type name="LegendDisplayPolicy" />
+    </object-type>
     <!-- <object-type name="QwtLegendItem" /> -->
-    <!-- <object-type name="QwtLegendItemManager" /> -->
+    <object-type name="QwtLegendItemManager" />
     <!-- <object-type name="QwtLinearColorMap" /> -->
     <!-- <object-type name="QwtLinearScaleEngine" /> -->
     <!-- <object-type name="QwtLog10ScaleEngine" /> -->
