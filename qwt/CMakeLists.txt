@@ -31,7 +31,7 @@ set(qwt_SRC
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdoubleinterval_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdoublerange_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdyngridlayout_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwteventpattern_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwteventpattern_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwteventpattern_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwteventpattern_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtintervaldata_wrapper.cpp
