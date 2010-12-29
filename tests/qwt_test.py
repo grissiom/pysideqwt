@@ -8,6 +8,12 @@ import numpy as np
 
 from PySide.QtCore import *
 from PySide.QtGui import *
+
+# check class exists
+from PySideQwt import QwtPlot
+from PySideQwt import QwtPlotCurve
+from PySideQwt import QwtPlotGrid
+
 import PySideQwt as qwt
 
 class QwtTest(unittest.TestCase):
@@ -16,8 +22,13 @@ class QwtTest(unittest.TestCase):
         '''Test case for qwtplot class from qwt module.'''
         app = QApplication([])
         plot = qwt.QwtPlot()
+
         curve = qwt.QwtPlotCurve()
         curve.attach(plot)
+
+        grid = QwtPlotGrid()
+        grid.attach(plot)
+        grid.setPen(QPen(Qt.black, 0, Qt.DotLine))
 
         x = np.arange(100)
         y = np.sin(x/10.0)

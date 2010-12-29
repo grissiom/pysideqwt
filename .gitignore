@@ -3,3 +3,6 @@ CMakeCache.txt
 Makefile
 CMakeFiles/
 Testing/
+qwt/PySideQwt/
+
+*.so

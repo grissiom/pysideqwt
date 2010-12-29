@@ -2,8 +2,97 @@
 <typesystem package="PySideQwt">
     <load-typesystem name="typesystem_core.xml" generate="no" />
     <load-typesystem name="typesystem_gui_common.xml" generate="no" />
+
     <object-type name="QwtPlot" />
     <object-type name="QwtPlotItem" />
     <object-type name="QwtPlotCurve" />
+
+    <!-- <object-type name="QwtAbstractScale" /> -->
+    <!-- <object-type name="QwtAbstractScaleDraw" /> -->
+    <!-- <object-type name="QwtAbstractSlider" /> -->
+    <!-- <object-type name="QwtAlphaColorMap" /> -->
+    <!-- <object-type name="QwtAnalogClock" /> -->
+    <!-- <object-type name="QwtArrayData" /> -->
+    <!-- <object-type name="QwtArrowButton" /> -->
+    <!-- <object-type name="QwtClipper" /> -->
+    <!-- <object-type name="QwtColorMap" /> -->
+    <!-- <object-type name="QwtCompass" /> -->
+    <!-- <object-type name="QwtCompassMagnetNeedle" /> -->
+    <!-- <object-type name="QwtCompassRose" /> -->
+    <!-- <object-type name="QwtCompassWindArrow" /> -->
+    <!-- <object-type name="QwtCounter" /> -->
+    <!-- <object-type name="QwtCPointerData" /> -->
+    <!-- <object-type name="QwtCurveFitter" /> -->
+    <!-- <object-type name="QwtData" /> -->
+    <!-- <object-type name="QwtDial" /> -->
+    <!-- <object-type name="QwtDialNeedle" /> -->
+    <!-- <object-type name="QwtDialScaleDraw" /> -->
+    <!-- <object-type name="QwtDialSimpleNeedle" /> -->
+    <!-- <object-type name="QwtDoubleInterval" /> -->
+    <!-- <object-type name="QwtDoubleRange" /> -->
+    <!-- <object-type name="QwtDynGridLayout" /> -->
+    <!-- <object-type name="QwtEventPattern" /> -->
+    <!-- <object-type name="QwtEventPattern" /> -->
+    <!-- <object-type name="QwtEventPattern" /> -->
+    <!-- <object-type name="QwtIntervalData" /> -->
+    <!-- <object-type name="QwtKnob" /> -->
+    <!-- <object-type name="QwtLegend" /> -->
+    <!-- <object-type name="QwtLegendItem" /> -->
+    <!-- <object-type name="QwtLegendItemManager" /> -->
+    <!-- <object-type name="QwtLinearColorMap" /> -->
+    <!-- <object-type name="QwtLinearScaleEngine" /> -->
+    <!-- <object-type name="QwtLog10ScaleEngine" /> -->
+    <!-- <object-type name="QwtMagnifier" /> -->
+    <!-- <object-type name="QwtMathMLTextEngine" /> -->
+    <!-- <object-type name="QwtMetricsMap" /> -->
+    <!-- <object-type name="QwtPainter" /> -->
+    <!-- <object-type name="QwtPanner" /> -->
+    <!-- <object-type name="QwtPicker" /> -->
+    <!-- <object-type name="QwtPickerClickPointMachine" /> -->
+    <!-- <object-type name="QwtPickerClickRectMachine" /> -->
+    <!-- <object-type name="QwtPickerDragPointMachine" /> -->
+    <!-- <object-type name="QwtPickerDragRectMachine" /> -->
+    <!-- <object-type name="QwtPickerMachine" /> -->
+    <!-- <object-type name="QwtPickerPolygonMachine" /> -->
+    <!-- <object-type name="QwtPlainTextEngine" /> -->
+    <!-- <object-type name="QwtPlotCanvas" /> -->
+    <!-- <object-type name="QwtPlotDict" /> -->
+    <object-type name="QwtPlotGrid" />
+    <!-- <object-type name="QwtPlotLayout" /> -->
+    <!-- <object-type name="QwtPlotMagnifier" /> -->
+    <!-- <object-type name="QwtPlotMarker" /> -->
+    <!-- <object-type name="QwtPlotPanner" /> -->
+    <!-- <object-type name="QwtPlotPicker" /> -->
+    <!-- <object-type name="QwtPlotPrintFilter" /> -->
+    <!-- <object-type name="QwtPlotRasterItem" /> -->
+    <!-- <object-type name="QwtPlotRescaler" /> -->
+    <!-- <object-type name="QwtPlotScaleItem" /> -->
+    <!-- <object-type name="QwtPlotSpectrogram" /> -->
+    <!-- <object-type name="QwtPlotSvgItem" /> -->
+    <!-- <object-type name="QwtPlotZoomer" /> -->
+    <!-- <object-type name="QwtPolygonFData" /> -->
+    <!-- <object-type name="QwtRasterData" /> -->
+    <!-- <object-type name="QwtRichTextEngine" /> -->
+    <!-- <object-type name="QwtRoundScaleDraw" /> -->
+    <!-- <object-type name="QwtScaleArithmetic" /> -->
+    <!-- <object-type name="QwtScaleDiv" /> -->
+    <!-- <object-type name="QwtScaleDraw" /> -->
+    <!-- <object-type name="QwtScaleEngine" /> -->
+
+    <!-- include this will cause error -->
+    <!-- <object-type name="QwtScaleMap" /> -->
+
+    <!-- <object-type name="QwtScaleTransformation" /> -->
+    <!-- <object-type name="QwtScaleWidget" /> -->
+    <!-- <object-type name="QwtSimpleCompassRose" /> -->
+    <!-- <object-type name="QwtSlider" /> -->
+    <!-- <object-type name="QwtSpline" /> -->
+    <!-- <object-type name="QwtSplineCurveFitter" /> -->
+    <!-- <object-type name="QwtSymbol" /> -->
+    <!-- <object-type name="QwtText" /> -->
+    <!-- <object-type name="QwtTextEngine" /> -->
+    <!-- <object-type name="QwtTextLabel" /> -->
+    <!-- <object-type name="QwtThermo" /> -->
+    <!-- <object-type name="QwtWheel" /> -->
 </typesystem>
 
