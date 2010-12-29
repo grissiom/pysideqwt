@@ -8,6 +8,9 @@ find_package(Shiboken REQUIRED)
 find_package(PySide REQUIRED)
 find_package(Qt4 4.6.2 REQUIRED)
 
+set(QWT_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/../qwt-5.2/src)
+set(QWT_LIBRARY ${CMAKE_SOURCE_DIR}/../qwt-5.2/lib)
+
 # try to find qwt
 if (NOT QWT_INCLUDE_DIR)
     find_path(QWT_INCLUDE_DIR qwt.h /usr/include/qwt)
