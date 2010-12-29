@@ -94,8 +94,9 @@ set(qwt_SRC
 )
 
 set(qwt_INCLUDE_DIRECTORIES
+    ${QWT_INCLUDE_DIR}
     ${SHIBOKEN_INCLUDE_DIR}
-    ${PYTHON_INCLUDE_PATH}
+    ${SHIBOKEN_PYTHON_INCLUDE_DIR}
     ${PYSIDE_INCLUDE_DIR}
     ${PYSIDE_INCLUDE_DIR}/QtCore
     ${PYSIDE_INCLUDE_DIR}/QtGui
@@ -109,7 +110,7 @@ set(qwt_LINK_LIBRARIES
     ${SHIBOKEN_PYTHON_LIBRARIES}
     ${SHIBOKEN_LIBRARY}
     ${PYSIDE_LIBRARY}
-    ${LIBQWT_DIR}/lib/libqwt.so
+    ${QWT_LIBRARY}
 )
 
 include_directories(qwt ${qwt_INCLUDE_DIRECTORIES})
@@ -118,10 +119,10 @@ set_property(TARGET PySideQwt PROPERTY PREFIX "")
 target_link_libraries(PySideQwt ${qwt_LINK_LIBRARIES})
 
 add_custom_command(OUTPUT ${qwt_SRC}
-                    COMMAND ${GENERATOR}
+                    COMMAND ${GENERATORRUNNER_BINARY}
                     --generatorSet=shiboken --enable-parent-ctor-heuristic --enable-pyside-extensions --enable-return-value-heuristic
-                    ${CMAKE_SOURCE_DIR}/qwt/global.h
-                    --include-paths=${QT_INCLUDE_DIR}:${LIBQWT_DIR}/src
+                    ${CMAKE_CURRENT_SOURCE_DIR}/global.h
+                    --include-paths=${QT_INCLUDE_DIR}:${QWT_INCLUDE_DIR}
                     --typesystem-paths=${typesystem_path}:${PYSIDE_TYPESYSTEMS}
                     --output-directory=${CMAKE_CURRENT_BINARY_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}/typesystem_qwt.xml

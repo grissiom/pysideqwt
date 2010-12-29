@@ -3,15 +3,20 @@ project(qwtbinding)
 cmake_minimum_required(VERSION 2.6)
 
 find_package(PythonLibs REQUIRED)
+find_package(GeneratorRunner REQUIRED)
 find_package(Shiboken REQUIRED)
 find_package(PySide REQUIRED)
 find_package(Qt4 4.6.2 REQUIRED)
 
-set(LIBQWT_DIR ${CMAKE_SOURCE_DIR}/../qwt-5.2)
-
-find_program(GENERATOR generatorrunner REQUIRED)
-if (NOT GENERATOR)
-    message(FATAL_ERROR "You need to specify GENERATOR variable (-DGENERATOR=value)")
+# try to find qwt
+if (NOT QWT_INCLUDE_DIR)
+    find_path(QWT_INCLUDE_DIR qwt.h /usr/include/qwt)
+endif()
+if (NOT QWT_LIBRARY)
+    find_library(QWT_LIBRARY qwt)
+endif()
+if (NOT QWT_INCLUDE_DIR OR NOT QWT_LIBRARY)
+    message(FATAL "Qwt not found! Set QWT_INCLUDE_DIR and QWT_LIBRARY to the correct location.")
 endif()
 
 if(CMAKE_HOST_UNIX)
