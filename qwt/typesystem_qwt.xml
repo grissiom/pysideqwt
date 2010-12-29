@@ -3,9 +3,22 @@
     <load-typesystem name="typesystem_core.xml" generate="no" />
     <load-typesystem name="typesystem_gui_common.xml" generate="no" />
 
-    <object-type name="QwtPlot" />
-    <object-type name="QwtPlotItem" />
-    <object-type name="QwtPlotCurve" />
+    <object-type name="QwtPlot">
+      <enum-type name="Axis" /> 
+      <enum-type name="LegendPosition" />
+    </object-type>
+
+    <object-type name="QwtPlotItem">
+      <enum-type name="RttiValues" />
+      <enum-type name="ItemAttribute" />
+      <enum-type name="RenderHint" />
+    </object-type>
+    <object-type name="QwtPlotCurve">
+      <enum-type name="PaintAttribute" />
+      <enum-type name="CurveAttribute" />
+      <enum-type name="CurveType" />
+      <enum-type name="CurveStyle" />
+    </object-type>
 
     <!-- <object-type name="QwtAbstractScale" /> -->
     <!-- <object-type name="QwtAbstractScaleDraw" /> -->
@@ -31,7 +44,10 @@
     <!-- <object-type name="QwtDoubleInterval" /> -->
     <!-- <object-type name="QwtDoubleRange" /> -->
     <!-- <object-type name="QwtDynGridLayout" /> -->
-    <!-- <object-type name="QwtEventPattern" /> -->
+    <object-type name="QwtEventPattern">
+      <enum-type name="MousePatternCode" />
+      <enum-type name="KeyPatternCode" />
+    </object-type>
     <!-- <object-type name="QwtEventPattern" /> -->
     <!-- <object-type name="QwtEventPattern" /> -->
     <!-- <object-type name="QwtIntervalData" /> -->
@@ -47,7 +63,14 @@
     <!-- <object-type name="QwtMetricsMap" /> -->
     <!-- <object-type name="QwtPainter" /> -->
     <object-type name="QwtPanner" />
-    <object-type name="QwtPicker" />
+    <object-type name="QwtPicker">
+      <enum-type name="SelectionType" />
+      <enum-type name="RectSelectionType" />
+      <enum-type name="SelectionMode" />
+      <enum-type name="RubberBand" />
+      <enum-type name="DisplayMode" />
+      <enum-type name="ResizeMode" />
+    </object-type>
     <!-- <object-type name="QwtPickerClickPointMachine" /> -->
     <!-- <object-type name="QwtPickerClickRectMachine" /> -->
     <!-- <object-type name="QwtPickerDragPointMachine" /> -->
@@ -55,12 +78,17 @@
     <!-- <object-type name="QwtPickerMachine" /> -->
     <!-- <object-type name="QwtPickerPolygonMachine" /> -->
     <!-- <object-type name="QwtPlainTextEngine" /> -->
-    <object-type name="QwtPlotCanvas" />
+    <object-type name="QwtPlotCanvas">
+      <enum-type name="PaintAttribute" />
+      <enum-type name="FocusIndicator" />
+    </object-type>
     <!-- <object-type name="QwtPlotDict" /> -->
     <object-type name="QwtPlotGrid" />
     <!-- <object-type name="QwtPlotLayout" /> -->
     <!-- <object-type name="QwtPlotMagnifier" /> -->
-    <object-type name="QwtPlotMarker" />
+    <object-type name="QwtPlotMarker">
+      <enum-type name="LineStyle" />
+    </object-type>
     <object-type name="QwtPlotPanner" />
     <object-type name="QwtPlotPicker" />
     <!-- <object-type name="QwtPlotPrintFilter" /> -->
@@ -94,5 +122,6 @@
     <!-- <object-type name="QwtTextLabel" /> -->
     <!-- <object-type name="QwtThermo" /> -->
     <!-- <object-type name="QwtWheel" /> -->
+
 </typesystem>
 

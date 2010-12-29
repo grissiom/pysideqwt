@@ -55,12 +55,9 @@ set(qwt_SRC
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpickermachine_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpickerpolygonmachine_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplaintextengine_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplot_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotcanvas_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotcurve_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotdict_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotgrid_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotitem_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotlayout_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotmagnifier_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotmarker_wrapper.cpp
