@@ -14,8 +14,12 @@ from PySideQwt import QwtPlot
 from PySideQwt import QwtPlotCurve
 from PySideQwt import QwtPlotGrid
 from PySideQwt import QwtPlotPanner
+from PySideQwt import QwtPlotItem
 
 import PySideQwt as qwt
+
+class MyItem(QwtPlotItem):
+    pass
 
 class QwtTest(unittest.TestCase):
 

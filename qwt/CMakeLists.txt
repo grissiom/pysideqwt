@@ -2,7 +2,12 @@ project(qwt)
 
 set(qwt_SRC
     ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/pysideqwt_module_wrapper.cpp
+
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpicker_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotpicker_wrapper.cpp
+
     ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplot_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwttext_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotitem_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotcurve_wrapper.cpp
 
@@ -47,7 +52,6 @@ set(qwt_SRC
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtmetricsmap_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpainter_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpanner_wrapper.cpp
-    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpicker_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpickerclickpointmachine_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpickerclickrectmachine_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpickerdragpointmachine_wrapper.cpp
@@ -62,7 +66,6 @@ set(qwt_SRC
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotmagnifier_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotmarker_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotpanner_wrapper.cpp
-    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotpicker_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotprintfilter_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotrasteritem_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotrescaler_wrapper.cpp
@@ -76,9 +79,9 @@ set(qwt_SRC
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtroundscaledraw_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalearithmetic_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalediv_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscaledraw_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalemap_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscaledraw_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscaleengine_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalemap_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscaletransformation_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalewidget_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtsimplecompassrose_wrapper.cpp
@@ -86,9 +89,8 @@ set(qwt_SRC
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtspline_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtsplinecurvefitter_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtsymbol_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwttext_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwttextengine_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwttextlabel_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwttextlabel_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtthermo_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtwheel_wrapper.cpp
 )
@@ -129,3 +131,4 @@ add_custom_command(OUTPUT ${qwt_SRC}
                     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
                     COMMENT "Running generator for libqwt..."
                    )
+

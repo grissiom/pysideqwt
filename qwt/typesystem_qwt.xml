@@ -3,16 +3,25 @@
     <load-typesystem name="typesystem_core.xml" generate="no" />
     <load-typesystem name="typesystem_gui_common.xml" generate="no" />
 
+    <object-type name="QwtText">
+      <enum-type name="LayoutAttribute"/>
+      <enum-type name="TextFormat"/>
+      <enum-type name="PaintAttribute"/>
+    </object-type>
+
     <object-type name="QwtPlot">
       <enum-type name="Axis" />
       <enum-type name="LegendPosition" />
+      <modify-function signature="canvasMap(int)const" remove="all" />
     </object-type>
 
     <object-type name="QwtPlotItem">
+      <add-function signature="draw(QPainter*,const QwtScaleMap&amp;,const QwtScaleMap&amp;,const QRect&amp;) const" />
       <enum-type name="RttiValues" />
       <enum-type name="ItemAttribute" />
       <enum-type name="RenderHint" />
     </object-type>
+
     <object-type name="QwtPlotCurve">
       <enum-type name="PaintAttribute" />
       <enum-type name="CurveAttribute" />
@@ -53,7 +62,8 @@
     <!-- <object-type name="QwtIntervalData" /> -->
     <!-- <object-type name="QwtKnob" /> -->
     <object-type name="QwtLegend">
-        <enum-type name="LegendDisplayPolicy" />
+      <enum-type name="LegendDisplayPolicy" />
+      <enum-type name="LegendItemMode" />
     </object-type>
     <!-- <object-type name="QwtLegendItem" /> -->
     <object-type name="QwtLegendItemManager" />
@@ -66,6 +76,12 @@
     <!-- <object-type name="QwtPainter" /> -->
     <object-type name="QwtPanner" />
     <object-type name="QwtPicker">
+      <modify-function signature="trackerText(QPoint) const" remove="all" />
+      <!-- <modify-function signature="trackerText(const QPoint &amp;) const"> -->
+      <!-- 	<modify-argument index="return"> -->
+      <!--     <replace-type modified-type="QwtText*"/> -->
+      <!-- 	</modify-argument> -->
+      <!-- </modify-function> -->
       <enum-type name="SelectionType" />
       <enum-type name="RectSelectionType" />
       <enum-type name="SelectionMode" />
@@ -92,7 +108,10 @@
       <enum-type name="LineStyle" />
     </object-type>
     <object-type name="QwtPlotPanner" />
-    <object-type name="QwtPlotPicker" />
+    <object-type name="QwtPlotPicker">
+      <modify-function signature="trackerText(QPoint) const" remove="all" />
+      <modify-function signature="trackerText(QPointF) const" remove="all" />
+    </object-type>
     <!-- <object-type name="QwtPlotPrintFilter" /> -->
     <!-- <object-type name="QwtPlotRasterItem" /> -->
     <!-- <object-type name="QwtPlotRescaler" /> -->
@@ -106,11 +125,11 @@
     <!-- <object-type name="QwtRoundScaleDraw" /> -->
     <!-- <object-type name="QwtScaleArithmetic" /> -->
     <!-- <object-type name="QwtScaleDiv" /> -->
-    <!-- <object-type name="QwtScaleDraw" /> -->
+    <object-type name="QwtScaleMap" />
+    <object-type name="QwtScaleDraw" />
     <!-- <object-type name="QwtScaleEngine" /> -->
 
     <!-- include this will cause error -->
-    <!-- <object-type name="QwtScaleMap" /> -->
 
     <!-- <object-type name="QwtScaleTransformation" /> -->
     <!-- <object-type name="QwtScaleWidget" /> -->
@@ -119,9 +138,8 @@
     <!-- <object-type name="QwtSpline" /> -->
     <!-- <object-type name="QwtSplineCurveFitter" /> -->
     <!-- <object-type name="QwtSymbol" /> -->
-    <!-- <object-type name="QwtText" /> -->
     <!-- <object-type name="QwtTextEngine" /> -->
-    <!-- <object-type name="QwtTextLabel" /> -->
+    <object-type name="QwtTextLabel" />
     <!-- <object-type name="QwtThermo" /> -->
     <!-- <object-type name="QwtWheel" /> -->
 
