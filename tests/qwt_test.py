@@ -35,14 +35,13 @@ class QwtTest(unittest.TestCase):
         grid.attach(plot)
         grid.setPen(QPen(Qt.black, 0, Qt.DotLine))
 
-        x = np.arange(100)
+        x = np.arange(20)
         y = np.sin(x/10.0)
 
-        x = list(x)
-        y = list(y)
+        x = [float(i) for i in x]
+        y = [float(i) for i in y]
         
-        curve.setData([1,2,3], [1, 4, 9])
-        # curve.setData(x, y)
+        curve.setData(x, y)
         plot.show()
 
         #pickers

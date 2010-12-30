@@ -3,6 +3,10 @@
     <load-typesystem name="typesystem_core.xml" generate="no" />
     <load-typesystem name="typesystem_gui_common.xml" generate="no" />
 
+    <object-type name="QwtSymbol">
+      <enum-type name="Style"/>
+    </object-type>
+
     <object-type name="QwtText">
       <enum-type name="LayoutAttribute"/>
       <enum-type name="TextFormat"/>
@@ -126,7 +130,9 @@
     <!-- <object-type name="QwtScaleArithmetic" /> -->
     <!-- <object-type name="QwtScaleDiv" /> -->
     <object-type name="QwtScaleMap" />
-    <object-type name="QwtScaleDraw" />
+    <object-type name="QwtScaleDraw">
+      <enum-type name="Alignment"/>
+    </object-type>
     <!-- <object-type name="QwtScaleEngine" /> -->
 
     <!-- include this will cause error -->
@@ -137,7 +143,6 @@
     <!-- <object-type name="QwtSlider" /> -->
     <!-- <object-type name="QwtSpline" /> -->
     <!-- <object-type name="QwtSplineCurveFitter" /> -->
-    <!-- <object-type name="QwtSymbol" /> -->
     <!-- <object-type name="QwtTextEngine" /> -->
     <object-type name="QwtTextLabel" />
     <!-- <object-type name="QwtThermo" /> -->
