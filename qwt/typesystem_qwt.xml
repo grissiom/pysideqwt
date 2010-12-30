@@ -81,11 +81,6 @@
     <object-type name="QwtPanner" />
     <object-type name="QwtPicker">
       <modify-function signature="trackerText(QPoint) const" remove="all" />
-      <!-- <modify-function signature="trackerText(const QPoint &amp;) const"> -->
-      <!-- 	<modify-argument index="return"> -->
-      <!--     <replace-type modified-type="QwtText*"/> -->
-      <!-- 	</modify-argument> -->
-      <!-- </modify-function> -->
       <enum-type name="SelectionType" />
       <enum-type name="RectSelectionType" />
       <enum-type name="SelectionMode" />
@@ -134,15 +129,12 @@
       <enum-type name="Alignment"/>
     </object-type>
     <!-- <object-type name="QwtScaleEngine" /> -->
-
-    <!-- include this will cause error -->
-
     <!-- <object-type name="QwtScaleTransformation" /> -->
     <!-- <object-type name="QwtScaleWidget" /> -->
     <!-- <object-type name="QwtSimpleCompassRose" /> -->
     <!-- <object-type name="QwtSlider" /> -->
     <!-- <object-type name="QwtSpline" /> -->
-    <!-- <object-type name="QwtSplineCurveFitter" /> -->
+    <object-type name="QwtSplineCurveFitter" />
     <!-- <object-type name="QwtTextEngine" /> -->
     <object-type name="QwtTextLabel" />
     <!-- <object-type name="QwtThermo" /> -->

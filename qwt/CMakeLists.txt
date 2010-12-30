@@ -89,7 +89,7 @@ set(qwt_SRC
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtsimplecompassrose_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtslider_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtspline_wrapper.cpp
-    # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtsplinecurvefitter_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtsplinecurvefitter_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwttextengine_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwttextlabel_wrapper.cpp
     # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtthermo_wrapper.cpp
