@@ -1,8 +1,17 @@
 project(qwt)
 
+set(qwt_support_SRC
+  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numeric.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numpy.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numarray.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_ndarray.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numerical_interface.cpp
+  )
+
 set(qwt_SRC
-  # wrapper
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/pysideqwt_module_wrapper.cpp
+
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscaledraw_wrapper.cpp
   
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtsymbol_wrapper.cpp
   
@@ -15,19 +24,17 @@ set(qwt_SRC
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotitem_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotcurve_wrapper.cpp
 
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtabstractscale_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtabstractscale_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtabstractscaledraw_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtabstractslider_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtalphacolormap_wrapper.cpp
-  # # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtanalogclock_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtarraydata_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtarrowbutton_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtclipper_wrapper.cpp
-  # # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtcolormap_wrapper.cpp
-  # # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtcompass_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtcompassmagnetneedle_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtcompassrose_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtcompasswindarrow_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtabstractslider_wrapper.cpp
+  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtanalogclock_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtarraydata_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtarrowbutton_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtclipper_wrapper.cpp
+  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtcompass_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtcompassmagnetneedle_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtcompassrose_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtcompasswindarrow_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdoublerange_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtcounter_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtcpointerdata_wrapper.cpp
@@ -46,7 +53,11 @@ set(qwt_SRC
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlegend_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlegenditem_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlegenditemmanager_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlinearcolormap_wrapper.cpp
+
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtcolormap_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtalphacolormap_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlinearcolormap_wrapper.cpp
+
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlinearscaleengine_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlog10scaleengine_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtmagnifier_wrapper.cpp
@@ -81,10 +92,9 @@ set(qwt_SRC
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalearithmetic_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalediv_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalemap_wrapper.cpp
-  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscaledraw_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscaleengine_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscaletransformation_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalewidget_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalewidget_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtsimplecompassrose_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtslider_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtspline_wrapper.cpp
@@ -95,12 +105,6 @@ set(qwt_SRC
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtthermo_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtwheel_wrapper.cpp
 
-  # support
-  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numeric.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numpy.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numarray.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_ndarray.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numerical_interface.cpp
   )
 
 set(qwt_INCLUDE_DIRECTORIES
@@ -125,7 +129,7 @@ set(qwt_LINK_LIBRARIES
   )
 
 include_directories(qwt ${qwt_INCLUDE_DIRECTORIES})
-add_library(PySideQwt MODULE ${qwt_SRC})
+add_library(PySideQwt MODULE ${qwt_SRC} ${qwt_support_SRC})
 set_property(TARGET PySideQwt PROPERTY PREFIX "")
 target_link_libraries(PySideQwt ${qwt_LINK_LIBRARIES})
 
