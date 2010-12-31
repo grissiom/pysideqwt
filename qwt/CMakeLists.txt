@@ -1,13 +1,6 @@
 project(qwt)
 
 set(qwt_SRC
-  # support
-  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numpy.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numeric.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numarray.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_ndarray.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numerical_interface.cpp
-                                      
   # wrapper
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/pysideqwt_module_wrapper.cpp
   
@@ -43,7 +36,7 @@ set(qwt_SRC
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdialneedle_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdialscaledraw_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdialsimpleneedle_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdoubleinterval_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdoubleinterval_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdyngridlayout_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwteventpattern_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwteventpattern_keypattern_wrapper.cpp
@@ -77,9 +70,9 @@ set(qwt_SRC
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotprintfilter_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotrescaler_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotscaleitem_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtrasterdata_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotrasteritem_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotspectrogram_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtrasterdata_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotrasteritem_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotspectrogram_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotsvgitem_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotzoomer_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpolygonfdata_wrapper.cpp
@@ -101,6 +94,13 @@ set(qwt_SRC
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwttextlabel_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtthermo_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtwheel_wrapper.cpp
+
+  # support
+  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numeric.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numpy.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numarray.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_ndarray.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/support/qwt_numerical_interface.cpp
   )
 
 set(qwt_INCLUDE_DIRECTORIES

@@ -69,7 +69,7 @@
     <!-- <object-type name="QwtDialNeedle" /> -->
     <!-- <object-type name="QwtDialScaleDraw" /> -->
     <!-- <object-type name="QwtDialSimpleNeedle" /> -->
-    <!-- <object-type name="QwtDoubleInterval" /> -->
+    <value-type name="QwtDoubleInterval" />
     <!-- <object-type name="QwtDynGridLayout" /> -->
     <object-type name="QwtEventPattern">
       <object-type name="KeyPattern" />
@@ -138,9 +138,13 @@
     <!-- <object-type name="QwtPlotSvgItem" /> -->
     <object-type name="QwtPlotZoomer" />
     <!-- <object-type name="QwtPolygonFData" /> -->
-    <!-- <object-type name="QwtRasterData" /> -->
-    <!-- <object-type name="QwtPlotRasterItem" /> -->
-    <!-- <object-type name="QwtPlotSpectrogram" /> -->
+    <object-type name="QwtRasterData">
+      <add-function signature="value(double,double)const" />
+      <!-- <add-function signature="range() const" /> -->
+      <!-- <add-function signature="copy()const" /> -->
+    </object-type>
+    <object-type name="QwtPlotRasterItem" />
+    <object-type name="QwtPlotSpectrogram" />
     <!-- <object-type name="QwtRichTextEngine" /> -->
     <!-- <object-type name="QwtRoundScaleDraw" /> -->
     <!-- <object-type name="QwtScaleArithmetic" /> -->
