@@ -13,6 +13,7 @@
       <enum-type name="PaintAttribute"/>
     </object-type>
 
+    <object-type name="QwtPlotDict" />
     <object-type name="QwtPlot">
       <enum-type name="Axis" />
       <enum-type name="LegendPosition" />
@@ -27,6 +28,20 @@
     </object-type>
 
     <object-type name="QwtPlotCurve">
+      <include file-name="qwt_numerical_interface.h" location="local"/>
+      <modify-function signature="setData(const double*,const double*,int)" rename="setRawData" />
+      <add-function signature="setData(PyObject*,PyObject*)">
+      <inject-code class="target" position="beginning">
+	QwtArray&lt;double&gt; x_array;
+        if (-1 == try_PyObject_to_QwtArray(pyargs[0], x_array))
+          return 0;
+
+        QwtArray&lt;double&gt; y_array;
+        if (-1 == try_PyObject_to_QwtArray(pyargs[1], x_array))
+          return 0;
+        %CPPSELF-&gt;setData(x_array, y_array);
+      </inject-code>
+      </add-function>
       <enum-type name="PaintAttribute" />
       <enum-type name="CurveAttribute" />
       <enum-type name="CurveType" />
@@ -46,18 +61,20 @@
     <!-- <object-type name="QwtCompassMagnetNeedle" /> -->
     <!-- <object-type name="QwtCompassRose" /> -->
     <!-- <object-type name="QwtCompassWindArrow" /> -->
-    <!-- <object-type name="QwtCounter" /> -->
+    <object-type name="QwtDoubleRange" />
+    <object-type name="QwtCounter" />
     <!-- <object-type name="QwtCPointerData" /> -->
-    <!-- <object-type name="QwtCurveFitter" /> -->
     <!-- <object-type name="QwtData" /> -->
     <!-- <object-type name="QwtDial" /> -->
     <!-- <object-type name="QwtDialNeedle" /> -->
     <!-- <object-type name="QwtDialScaleDraw" /> -->
     <!-- <object-type name="QwtDialSimpleNeedle" /> -->
     <!-- <object-type name="QwtDoubleInterval" /> -->
-    <!-- <object-type name="QwtDoubleRange" /> -->
     <!-- <object-type name="QwtDynGridLayout" /> -->
     <object-type name="QwtEventPattern">
+      <object-type name="KeyPattern" />
+      <object-type name="MousePattern" />
+
       <enum-type name="MousePatternCode" />
       <enum-type name="KeyPatternCode" />
     </object-type>
@@ -99,9 +116,13 @@
       <enum-type name="PaintAttribute" />
       <enum-type name="FocusIndicator" />
     </object-type>
-    <!-- <object-type name="QwtPlotDict" /> -->
     <object-type name="QwtPlotGrid" />
-    <!-- <object-type name="QwtPlotLayout" /> -->
+    <object-type name="QwtPlotLayout">    
+      <modify-function signature="expandLineBreaks(int,QRect,int&amp;,Array)const" remove="all" />
+      <modify-function signature="layoutLegend(int,QRect)const" remove="all" />
+      <modify-function signature="alignLegend(QRect,QRect)const" remove="all" />
+      <modify-function signature="alignScales(int,QRect&amp;,Array)const" remove="all" />
+    </object-type>
     <!-- <object-type name="QwtPlotMagnifier" /> -->
     <object-type name="QwtPlotMarker">
       <enum-type name="LineStyle" />
@@ -112,14 +133,14 @@
       <modify-function signature="trackerText(QPointF) const" remove="all" />
     </object-type>
     <!-- <object-type name="QwtPlotPrintFilter" /> -->
-    <!-- <object-type name="QwtPlotRasterItem" /> -->
     <!-- <object-type name="QwtPlotRescaler" /> -->
     <!-- <object-type name="QwtPlotScaleItem" /> -->
-    <!-- <object-type name="QwtPlotSpectrogram" /> -->
     <!-- <object-type name="QwtPlotSvgItem" /> -->
     <object-type name="QwtPlotZoomer" />
     <!-- <object-type name="QwtPolygonFData" /> -->
     <!-- <object-type name="QwtRasterData" /> -->
+    <!-- <object-type name="QwtPlotRasterItem" /> -->
+    <!-- <object-type name="QwtPlotSpectrogram" /> -->
     <!-- <object-type name="QwtRichTextEngine" /> -->
     <!-- <object-type name="QwtRoundScaleDraw" /> -->
     <!-- <object-type name="QwtScaleArithmetic" /> -->
@@ -134,6 +155,9 @@
     <!-- <object-type name="QwtSimpleCompassRose" /> -->
     <!-- <object-type name="QwtSlider" /> -->
     <!-- <object-type name="QwtSpline" /> -->
+    <object-type name="QwtCurveFitter">
+      <enum-type name="FitMode"/>
+    </object-type>
     <object-type name="QwtSplineCurveFitter" />
     <!-- <object-type name="QwtTextEngine" /> -->
     <object-type name="QwtTextLabel" />

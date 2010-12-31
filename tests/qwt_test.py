@@ -38,8 +38,8 @@ class QwtTest(unittest.TestCase):
         x = np.arange(20)
         y = np.sin(x/10.0)
 
-        x = [float(i) for i in x]
-        y = [float(i) for i in y]
+        # x = [float(i) for i in x]
+        # y = [float(i) for i in y]
         
         curve.setData(x, y)
         plot.show()
