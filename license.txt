@@ -1,0 +1,14 @@
+this project is LGPL, means that:
+
+- you can import it into your close source commercial project.
+- any modification of this project, need open source, and feed back to maintainer. (it is good for keep this project running)
+
+
+and this project import lots of files from pyqwt, and got author's permition, with above conditions.
+
+those file are:
+
+- /qwt/support/*.*
+- /tests/qt4examples/*.*
+
+with some modification for fit pyside.

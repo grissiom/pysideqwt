@@ -4,8 +4,6 @@ Makefile
 CMakeFiles/
 Testing/
 qwt/PySideQwt/
-qwt/support/
-tests/qt4examples/
 
 *.so
 *.log
