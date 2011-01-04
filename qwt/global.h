@@ -81,3 +81,4 @@
 #include <qwt_double_range.h>
 #include <qwt_plot_printfilter.h>
 #include <qwt_counter.h>
+//#include <qwt_mathml_text_engine.h>
