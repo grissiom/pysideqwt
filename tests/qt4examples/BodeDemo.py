@@ -97,46 +97,13 @@ zoom_xpm = ['32 32 8 1',
             '...########################..##.']
 
 
-
-class PrintFilter(QwtPlotPrintFilter):
-    def __init__(self):
-        QwtPlotPrintFilter.__init__(self)
-
-    # __init___()
-    
-    def color(self, c, item):
-        if not (self.options() & QwtPlotPrintFilter.CanvasBackground):
-            if item == QwtPlotPrintFilter.MajorGrid:
-                return darkGray
-            elif item == QwtPlotPrintFilter.MinorGrid:
-                return gray
-        if item == QwtPlotPrintFilter.Title:
-            return red
-        elif item == QwtPlotPrintFilter.AxisScale:
-            return green
-        elif item == QwtPlotPrintFilter.AxisTitle:
-            return blue
-        return c
-
-    # color()
-
-    def font(self, f, _):
-        result = QFont(f)
-        result.setPointSize(int(f.pointSize()*1.25))
-        return result
-
-    # font()
-
-# class PrintFilter
-
-
 class BodePlot(QwtPlot):
 
     def __init__(self, *args):
         QwtPlot.__init__(self, *args)
 
         self.setTitle('Frequency Response of a 2<sup>nd</sup>-order System')
-        self.setCanvasBackground(darkBlue)
+        self.setCanvasBackground(Qt.darkBlue)
 
         # legend
         legend = QwtLegend()
@@ -147,8 +114,8 @@ class BodePlot(QwtPlot):
         # grid
         self.grid = QwtPlotGrid()
         self.grid.enableXMin(True)
-        self.grid.setMajPen(QPen(white, 0, DotLine))
-        self.grid.setMinPen(QPen(gray, 0 , DotLine))
+        self.grid.setMajPen(QPen(Qt.white, 0, Qt.DotLine))
+        self.grid.setMinPen(QPen(Qt.gray, 0 , Qt.DotLine))
         self.grid.attach(self)
 
         # axes
@@ -164,13 +131,13 @@ class BodePlot(QwtPlot):
         # curves
         self.curve1 = QwtPlotCurve('Amplitude')
         self.curve1.setRenderHint(QwtPlotItem.RenderAntialiased);
-        self.curve1.setPen(QPen(yellow))
+        self.curve1.setPen(QPen(Qt.yellow))
         self.curve1.setYAxis(QwtPlot.yLeft)
         self.curve1.attach(self)
         
         self.curve2 = QwtPlotCurve('Phase')
         self.curve2.setRenderHint(QwtPlotItem.RenderAntialiased);
-        self.curve2.setPen(QPen(cyan))
+        self.curve2.setPen(QPen(Qt.cyan))
         self.curve2.setYAxis(QwtPlot.yRight)
         self.curve2.attach(self)
 
@@ -185,7 +152,7 @@ class BodePlot(QwtPlot):
         m.setLinePen(QPen(green, 2, DashDotLine))
         text = QwtText('')
         text.setColor(green)
-        text.setBackgroundBrush(red)
+        text.setBackgroundBrush(Qt.red)
         text.setFont(QFont(fn, 12, QFont.Bold))
         m.setLabel(text)
         m.attach(self)
@@ -193,7 +160,7 @@ class BodePlot(QwtPlot):
         self.peakMarker = m = QwtPlotMarker()
         m.setLineStyle(QwtPlotMarker.HLine)
         m.setLabelAlignment(AlignRight | AlignBottom)
-        m.setLinePen(QPen(red, 2, DashDotLine))
+        m.setLinePen(QPen(red, 2, Qt.DashDotLine))
         text = QwtText('')
         text.setColor(red)
         text.setBackgroundBrush(QBrush(self.canvasBackground()))
@@ -201,8 +168,8 @@ class BodePlot(QwtPlot):
         
         m.setLabel(text)
         m.setSymbol(QwtSymbol(QwtSymbol.Diamond,
-                              QBrush(yellow),
-                              QPen(green),
+                              QBrush(Qt.yellow),
+                              QPen(Qt.green),
                               QSize(7,7)))
         m.attach(self)
 
@@ -216,8 +183,8 @@ class BodePlot(QwtPlot):
             )
         text.setFont(QFont(fn, 12, QFont.Bold))
         text.setColor(blue)
-        text.setBackgroundBrush(QBrush(yellow))
-        text.setBackgroundPen(QPen(red, 2))
+        text.setBackgroundBrush(QBrush(Qt.yellow))
+        text.setBackgroundPen(QPen(Qt.red, 2))
         m.setLabel(text)
         m.attach(self)
 
@@ -497,10 +464,6 @@ def make():
 def main(args):
     app = QApplication(args)
     fonts = QFontDatabase()
-    for name in ('Verdana', 'STIXGeneral'):
-        if QString(name) in fonts.families():
-            app.setFont(QFont(name))
-            break
     demo = make()
     sys.exit(app.exec_())
 
