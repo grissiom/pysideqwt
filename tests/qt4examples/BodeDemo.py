@@ -148,10 +148,10 @@ class BodePlot(QwtPlot):
         self.dB3Marker = m = QwtPlotMarker()
         m.setValue(0.0, 0.0)
         m.setLineStyle(QwtPlotMarker.VLine)
-        m.setLabelAlignment(AlignRight | AlignBottom)
-        m.setLinePen(QPen(green, 2, DashDotLine))
+        m.setLabelAlignment(Qt.AlignRight | Qt.AlignBottom)
+        m.setLinePen(QPen(Qt.green, 2, Qt.DashDotLine))
         text = QwtText('')
-        text.setColor(green)
+        text.setColor(Qt.green)
         text.setBackgroundBrush(Qt.red)
         text.setFont(QFont(fn, 12, QFont.Bold))
         m.setLabel(text)
@@ -159,10 +159,10 @@ class BodePlot(QwtPlot):
 
         self.peakMarker = m = QwtPlotMarker()
         m.setLineStyle(QwtPlotMarker.HLine)
-        m.setLabelAlignment(AlignRight | AlignBottom)
-        m.setLinePen(QPen(red, 2, Qt.DashDotLine))
+        m.setLabelAlignment(Qt.AlignRight | Qt.AlignBottom)
+        m.setLinePen(QPen(Qt.red, 2, Qt.DashDotLine))
         text = QwtText('')
-        text.setColor(red)
+        text.setColor(Qt.red)
         text.setBackgroundBrush(QBrush(self.canvasBackground()))
         text.setFont(QFont(fn, 12, QFont.Bold))
         
@@ -176,13 +176,13 @@ class BodePlot(QwtPlot):
         # text marker
         m = QwtPlotMarker()
         m.setValue(0.1, -20.0)
-        m.setLabelAlignment(AlignRight | AlignBottom)
+        m.setLabelAlignment(Qt.AlignRight | Qt.AlignBottom)
         text = QwtText(
             u'[1-(\u03c9/\u03c9<sub>0</sub>)<sup>2</sup>+2j\u03c9/Q]'
             '<sup>-1</sup>'
             )
         text.setFont(QFont(fn, 12, QFont.Bold))
-        text.setColor(blue)
+        text.setColor(Qt.blue)
         text.setBackgroundBrush(QBrush(Qt.yellow))
         text.setBackgroundPen(QPen(Qt.red, 2))
         m.setLabel(text)
