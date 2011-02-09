@@ -9,6 +9,8 @@ from PySide.QtCore import *
 from PySide.QtGui import *
 
 import PySideQwt as Qwt
+from PySideQwt import *
 
 from numpy import *
+import numpy as np
 

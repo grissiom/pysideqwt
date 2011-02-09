@@ -7,4 +7,5 @@ qwt/PySideQwt/
 
 *.so
 *.log
+*.pyc
 build

@@ -58,6 +58,8 @@
   <object-type name="QwtPlotCurve">
     <include file-name="qwt_numerical_interface.h" location="local"/>
     <modify-function signature="setData(const double*,const double*,int)" rename="setRawData" />
+    <modify-function signature="draw(QPainter*,QwtScaleMap,QwtScaleMap,int,int)const" rename="drawFromTo" />
+
     <add-function signature="setData(PyObject*,PyObject*)">
       <inject-code class="target" position="beginning">
 	QwtArray&lt;double&gt; x_array;
@@ -71,6 +73,7 @@
 	<!-- qDebug() &lt;&lt; "x is:" &lt;&lt; x_array; -->
       </inject-code>
     </add-function>
+
     <enum-type name="PaintAttribute" />
     <enum-type name="CurveAttribute" />
     <enum-type name="CurveType" />
@@ -145,7 +148,15 @@
   <object-type name="QwtPlotSpectrogram">
     <enum-type name="DisplayMode"/>
   </object-type>
-  <object-type name="QwtScaleMap" />
+  <object-type name="QwtScaleMap">
+    <add-function signature="QwtScaleMap(int, int, double, double)">
+      <inject-code class="target" position="beginning">
+        %0 = new %TYPE();
+	%0-&gt;setPaintInterval(%1, %2);
+	%0-&gt;setScaleInterval(%3, %4);
+      </inject-code>
+    </add-function>	      
+  </object-type>
   <object-type name="QwtScaleWidget" />
   <object-type name="QwtCurveFitter" />
   <object-type name="QwtSplineCurveFitter">

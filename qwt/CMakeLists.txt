@@ -23,6 +23,7 @@ set(qwt_SRC
   # not found..
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtmathmltextengine_wrapper.cpp
 
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalemap_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdata_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdial_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscaledraw_wrapper.cpp
@@ -96,7 +97,6 @@ set(qwt_SRC
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtrichtextengine_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtroundscaledraw_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalearithmetic_wrapper.cpp
-  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalemap_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscaletransformation_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalewidget_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtsimplecompassrose_wrapper.cpp
