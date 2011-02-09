@@ -11,6 +11,7 @@ from PySide.QtGui import *
 import PySideQwt as Qwt
 from PySideQwt import *
 
+import numpy as np
 from numpy import *
 import numpy as np
 

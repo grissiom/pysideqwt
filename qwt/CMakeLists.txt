@@ -12,10 +12,10 @@ set(qwt_SRC
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/pysideqwt_module_wrapper.cpp
 
   # error, no include
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalediv_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscaleengine_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlinearscaleengine_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlog10scaleengine_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalediv_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscaleengine_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlinearscaleengine_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlog10scaleengine_wrapper.cpp
 
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotrescaler_wrapper.cpp
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdyngridlayout_wrapper.cpp
