@@ -29,7 +29,7 @@
   </object-type>
  
   <!-- import those cause error -->
-  <object-type name="QwtScaleDiv">
+  <value-type name="QwtScaleDiv">
     <modify-function signature="QwtScaleDiv(QwtDoubleInterval,Array)" remove="all"/>
     <modify-function signature="QwtScaleDiv(double,double,Array)" remove="all"/>
     <!--   QwtScaleDiv(const QwtDoubleInterval&, QwtValueList, QwtValueList, QwtValueList) [(const QwtDoubleInterval&, QwtValueList*)]; -->
@@ -46,7 +46,7 @@
       </inject-code>
     </add-function>
     <enum-type name="TickType"/>
-  </object-type>
+  </value-type>
   <object-type name="QwtScaleEngine">
     <!-- <modify-function signature="divideScale(double, double, int, int, double) const"> -->
     <!--   <modify-argument index="return"> -->
