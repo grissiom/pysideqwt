@@ -10,3 +10,4 @@ qwt/PySideQwt/
 *.log
 *.pyc
 build
+build_object
