@@ -11,14 +11,13 @@ set(qwt_support_SRC
 set(qwt_SRC
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/pysideqwt_module_wrapper.cpp
 
-  # error, no include
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotrescaler_wrapper.cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdyngridlayout_wrapper.cpp
+
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscalediv_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtscaleengine_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlinearscaleengine_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtlog10scaleengine_wrapper.cpp
-
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotrescaler_wrapper.cpp
-  # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtdyngridlayout_wrapper.cpp
 
   # not found..
   # ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtmathmltextengine_wrapper.cpp
@@ -122,6 +121,7 @@ set(qwt_INCLUDE_DIRECTORIES
   ${QT_QTCORE_INCLUDE_DIR}
   ${LIBQWT_DIR}/src
   ${CMAKE_CURRENT_SOURCE_DIR}/support
+  ${CMAKE_CURRENT_SOURCE_DIR}
   )
 
 set(qwt_LINK_LIBRARIES

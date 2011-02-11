@@ -62,11 +62,16 @@
   </object-type>
   <object-type name="QwtLog10ScaleEngine" />
 
-  <!-- <object-type name="QwtPlotRescaler"> -->
-  <!--   <enum-type name="RescalePolicy"/> -->
-  <!--   <enum-type name="ExpandingDirection"/> -->
-  <!-- </object-type> -->
-  <!-- <object-type name="QwtDynGridLayout" /> -->
+  <object-type name="QwtPlotRescaler">
+    <enum-type name="RescalePolicy"/>
+    <enum-type name="ExpandingDirection"/>
+    <modify-function signature="updateScales(Array)const" remove="all"/>
+  </object-type>
+  <object-type name="QwtDynGridLayout">
+    <extra-includes>
+      <include file-name="qlayout_help_functions.h" location="local"/>
+    </extra-includes>
+  </object-type>
 
   <!-- not found -->
   <!-- <object-type name="QwtMathMLTextEngine" /> -->

@@ -419,7 +419,7 @@ QT_END_HEADER
 
 #ifndef QT_NO_OPENGL
 #define GL_ACCUM                          0x0100
-#define GL_LOAD                           0x0101
+`#define GL_LOAD                           0x0101
 #define GL_RETURN                         0x0102
 #define GL_MULT                           0x0103
 #define GL_ADD                            0x0104
