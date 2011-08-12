@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <typesystem package="PySideQwt">
-  <primitive-type name="size_t" default-constructor="0" target-lang-api-name="PyLong" />
-  <primitive-type name="size_t" default-constructor="0" target-lang-api-name="PyLong" />
+  <primitive-type name="size_t" default-constructor="0" target-lang-api-name="PyInt" />
+  <primitive-type name="size_t" default-constructor="0" target-lang-api-name="PyInt" />
 
   <container-type name="QwtValueList" type="list">
   </container-type>
@@ -13,6 +13,25 @@
     <enum-type name="Style"/>
   </object-type>
 
+  <object-type name="QwtArraySeriesData" />
+  <object-type name="QwtInterval">
+	  <enum-type name="BorderFlag"/>
+  </object-type>
+  <object-type name="QwtIntervalSample" />
+  <object-type name="QwtIntervalSeriesData" />
+  <object-type name="QwtPickerTrackerMachine" />
+  <object-type name="QwtPlotAbstractSeriesItem" />
+  <object-type name="QwtPlotSeriesItem" />
+  <object-type name="QwtPoint3D" />
+  <object-type name="QwtPoint3DSeriesData" />
+  <object-type name="QwtPointArrayData" />
+  <object-type name="QwtPointPolar" />
+  <object-type name="QwtPointSeriesData" />
+  <object-type name="QwtSeriesData" />
+  <object-type name="QwtSetSample" />
+  <object-type name="QwtSetSeriesData" />
+  <object-type name="QwtSyntheticPointData" />
+  <object-type name="QwtWeedingCurveFitter" />
   <object-type name="QwtText">
     <enum-type name="LayoutAttribute"/>
     <enum-type name="TextFormat"/>
@@ -24,13 +43,14 @@
     <enum-type name="Axis" />
     <enum-type name="LegendPosition" />
     <modify-function signature="canvasMap(int)const" remove="all" />
-    <modify-function signature="drawItems(QPainter*,QRect,Array,QwtPlotPrintFilter)const" remove="all" />
-    <modify-function signature="printCanvas(QPainter*,QRect,QRect,Array,QwtPlotPrintFilter)const" remove="all" />
+    <!-- FIXME: -->
+    <modify-function signature="drawItems(QPainter*,QRectF,Array)const" remove="all" />
+    <modify-function signature="drawItems(QPainter*,const QRectF&amp;,Array)const" remove="all" />
   </object-type>
  
   <!-- import those cause error -->
   <value-type name="QwtScaleDiv">
-    <modify-function signature="QwtScaleDiv(QwtDoubleInterval,Array)" remove="all"/>
+    <modify-function signature="QwtScaleDiv(QwtInterval,Array)" remove="all"/>
     <modify-function signature="QwtScaleDiv(double,double,Array)" remove="all"/>
     <!--   QwtScaleDiv(const QwtDoubleInterval&, QwtValueList, QwtValueList, QwtValueList) [(const QwtDoubleInterval&, QwtValueList*)]; -->
     <!--   <inject-code class="target" position="beginning"> -->
@@ -69,7 +89,9 @@
   </object-type>
   <object-type name="QwtDynGridLayout">
     <extra-includes>
-      <include file-name="qlayout_help_functions.h" location="local"/>
+      <!--
+         -<include file-name="qlayout_help_functions.h" location="local"/>
+         -->
     </extra-includes>
   </object-type>
 
@@ -83,27 +105,18 @@
   </object-type>
 
   <object-type name="QwtPlotCurve">
-    <include file-name="qwt_numerical_interface.h" location="local"/>
-    <modify-function signature="setData(const double*,const double*,int)" rename="setRawData" />
-    <modify-function signature="draw(QPainter*,QwtScaleMap,QwtScaleMap,int,int)const" rename="drawFromTo" />
-
-    <add-function signature="setData(PyObject*,PyObject*)">
-      <inject-code class="target" position="beginning">
-	QwtArray&lt;double&gt; x_array;
-        if (-1 == try_PyObject_to_QwtArray(pyargs[0], x_array))
-        return 0;
-
-        QwtArray&lt;double&gt; y_array;
-        if (-1 == try_PyObject_to_QwtArray(pyargs[1], y_array))
-        return 0;
-        %CPPSELF-&gt;setData(x_array, y_array);
-	<!-- qDebug() &lt;&lt; "x is:" &lt;&lt; x_array; -->
-      </inject-code>
-    </add-function>
-
+    <!--
+       -<include file-name="qwt_numerical_interface.h" location="local"/>
+       -->
+    <!--
+       -<modify-function signature="setData(const double*,const double*,int)" rename="setRawData" />
+       -->
+    <!--
+       -<modify-function signature="draw(QPainter*,QwtScaleMap,QwtScaleMap,int,int)const" rename="drawFromTo" />
+       -->
     <enum-type name="PaintAttribute" />
+    <enum-type name="LegendAttribute" />
     <enum-type name="CurveAttribute" />
-    <enum-type name="CurveType" />
     <enum-type name="CurveStyle" />
   </object-type>
 
@@ -119,9 +132,6 @@
   <object-type name="QwtCounter">
     <enum-type name="Button"/>
   </object-type>
-  <value-type name="QwtDoubleInterval">
-    <enum-type name="BorderMode"/>
-  </value-type>
   <object-type name="QwtEventPattern">
     <object-type name="KeyPattern" />
     <object-type name="MousePattern" />
@@ -130,16 +140,12 @@
     <enum-type name="KeyPatternCode" />
   </object-type>
   <object-type name="QwtLegend">
-    <enum-type name="LegendDisplayPolicy" />
     <enum-type name="LegendItemMode" />
   </object-type>
   <object-type name="QwtLegendItemManager" />
   <object-type name="QwtPanner" />
   <object-type name="QwtPicker">
     <modify-function signature="trackerText(QPoint) const" remove="all" />
-    <enum-type name="SelectionType" />
-    <enum-type name="RectSelectionType" />
-    <enum-type name="SelectionMode" />
     <enum-type name="RubberBand" />
     <enum-type name="DisplayMode" />
     <enum-type name="ResizeMode" />
@@ -150,11 +156,10 @@
   </object-type>
   <object-type name="QwtPlotGrid" />
   <object-type name="QwtPlotLayout">    
-    <enum-type name="Options"/>
-    <modify-function signature="expandLineBreaks(int,QRect,int&amp;,Array)const" remove="all" />
-    <modify-function signature="layoutLegend(int,QRect)const" remove="all" />
-    <modify-function signature="alignLegend(QRect,QRect)const" remove="all" />
-    <modify-function signature="alignScales(int,QRect&amp;,Array)const" remove="all" />
+    <enum-type name="Option"/>
+    <modify-function signature="expandLineBreaks(int,QRectF,int&amp;,Array)const" remove="all" />
+    <modify-function signature="alignLegend(QRectF,QRectF)const" remove="all" />
+    <modify-function signature="alignScales(int,QRectF&amp;,Array)const" remove="all" />
   </object-type>
   <object-type name="QwtPlotMarker">
     <enum-type name="LineStyle" />
@@ -162,15 +167,18 @@
   <object-type name="QwtPlotPanner" />
   <object-type name="QwtPlotPicker">
     <modify-function signature="trackerText(QPoint) const" remove="all" />
-    <modify-function signature="trackerText(QPointF) const" remove="all" />
+    <modify-function signature="trackerTextF(QPointF) const" remove="all" />
   </object-type>
   <object-type name="QwtPlotZoomer" />
   <object-type name="QwtRasterData">
-    <enum-type name="ConrecAttribute"/>
-    <add-function signature="value(double,double)const" />
+    <enum-type name="ConrecFlag"/>
+    <!--
+       -<add-function signature="value(double,double)const" />
+       -->
   </object-type>
   <object-type name="QwtPlotRasterItem">
     <enum-type name="CachePolicy"/>
+    <enum-type name="PaintAttribute"/>
   </object-type>
   <object-type name="QwtPlotSpectrogram">
     <enum-type name="DisplayMode"/>
@@ -184,7 +192,9 @@
       </inject-code>
     </add-function>	      
   </object-type>
-  <object-type name="QwtScaleWidget" />
+  <object-type name="QwtScaleWidget">
+    <enum-type name="LayoutFlag"/>
+  </object-type>
   <object-type name="QwtCurveFitter" />
   <object-type name="QwtSplineCurveFitter">
     <enum-type name="FitMode"/>
@@ -206,13 +216,12 @@
   <object-type name="QwtAnalogClock">
     <enum-type name="Hand"/>
     <modify-function signature="scaleLabel(double)const" remove="all" />
-    <modify-function signature="drawNeedle(QPainter*,QPoint,int,double,QPalette::ColorGroup)const" remove="all" />
+    <modify-function signature="drawNeedle(QPainter*,QPointF,double,double,QPalette::ColorGroup)const" remove="all" />
   </object-type>
   <object-type name="QwtArrowButton" />
   <object-type name="QwtClipper" />
 
   <object-type name="QwtDial">
-    <enum-type name="ScaleOptions"/>
     <enum-type name="Direction"/>
     <enum-type name="Shadow"/>
     <enum-type name="Mode"/>
@@ -228,12 +237,7 @@
     <enum-type name="Style"/>
   </object-type>
 
-  <object-type name="QwtData">
-  </object-type>
-
   <object-type name="QwtCPointerData" />
-  <object-type name="QwtArrayData" />
-  <object-type name="QwtPolygonFData" />
 
   <object-type name="QwtDialNeedle" />
   <object-type name="QwtDialScaleDraw" />
@@ -241,17 +245,15 @@
     <enum-type name="Style"/>
   </object-type>
 
-  <object-type name="QwtIntervalData" />
   <object-type name="QwtKnob">
-    <enum-type name="Symbol"/>
+    <enum-type name="MarkerStyle"/>
+    <enum-type name="KnobStyle"/>
   </object-type>
 
   <object-type name="QwtLegendItem">
-    <enum-type name="IdentifierMode"/>
   </object-type>
 
   <object-type name="QwtMagnifier" />
-  <object-type name="QwtMetricsMap" />
   <object-type name="QwtPainter" />
 
   <object-type name="QwtPickerClickPointMachine" />
@@ -260,16 +262,13 @@
   <object-type name="QwtPickerDragRectMachine" />
   <object-type name="QwtPickerMachine">
     <enum-type name="Command"/>
+    <enum-type name="SelectionType"/>
   </object-type>
   <object-type name="QwtPickerPolygonMachine" />
   <object-type name="QwtPlainTextEngine" />
 
   <object-type name="QwtPlotMagnifier" />
 
-  <object-type name="QwtPlotPrintFilter">
-    <enum-type name="Options"/>
-    <enum-type name="Item"/>
-  </object-type>
   <object-type name="QwtPlotScaleItem" />
   <object-type name="QwtPlotSvgItem" />
 
@@ -284,7 +283,7 @@
   <object-type name="QwtSimpleCompassRose" />
   <object-type name="QwtSlider">
     <enum-type name="ScalePos"/>
-    <enum-type name="BGSTYLE"/>
+    <enum-type name="BackgroundStyle"/>
   </object-type>
   <object-type name="QwtSpline">
     <enum-type name="SplineType"/>

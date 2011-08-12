@@ -90,7 +90,7 @@ set(qwt_SRC
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtrasterdata_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotrasteritem_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotspectrogram_wrapper.cpp
-  ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotsvgitem_wrapper.cpp
+  #${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotsvgitem_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtplotzoomer_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtpolygonfdata_wrapper.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/PySideQwt/qwtrichtextengine_wrapper.cpp
