@@ -167,7 +167,6 @@
   <object-type name="QwtPlotZoomer" />
   <object-type name="QwtRasterData">
     <enum-type name="ConrecAttribute"/>
-    <add-function signature="value(double,double)const" />
   </object-type>
   <object-type name="QwtPlotRasterItem">
     <enum-type name="CachePolicy"/>
