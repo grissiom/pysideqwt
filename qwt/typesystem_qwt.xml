@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <typesystem package="PySideQwt">
-  <primitive-type name="size_t" default-constructor="0" target-lang-api-name="PyLong" />
-  <primitive-type name="size_t" default-constructor="0" target-lang-api-name="PyLong" />
+  <primitive-type name="size_t" default-constructor="0" target-lang-api-name="PyInt" />
+  <primitive-type name="size_t" default-constructor="0" target-lang-api-name="PyInt" />
 
   <container-type name="QwtValueList" type="list">
   </container-type>
@@ -182,7 +182,7 @@
 	%0-&gt;setPaintInterval(%1, %2);
 	%0-&gt;setScaleInterval(%3, %4);
       </inject-code>
-    </add-function>	      
+    </add-function>
   </object-type>
   <object-type name="QwtScaleWidget" />
   <object-type name="QwtCurveFitter" />
