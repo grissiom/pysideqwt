@@ -270,7 +270,7 @@
     <enum-type name="Item"/>
   </object-type>
   <object-type name="QwtPlotScaleItem" />
-  <object-type name="QwtPlotSvgItem" />
+  <!-- <object-type name="QwtPlotSvgItem" /> -->
 
   <object-type name="QwtRichTextEngine" />
   <object-type name="QwtRoundScaleDraw" />
