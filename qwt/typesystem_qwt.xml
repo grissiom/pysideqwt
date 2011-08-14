@@ -295,5 +295,48 @@
   </object-type>
   <object-type name="QwtWheel" />
 
+  <object-type name="QwtColumnRect">
+    <enum-type name="Direction"/>
+  </object-type>
+
+  <object-type name="QwtColumnSymbol">
+    <enum-type name="FrameStyle"/>
+    <enum-type name="Style"/>
+  </object-type>
+
+  <object-type name="QwtIntervalSymbol">
+    <enum-type name="Style"/>
+  </object-type>
+
+  <object-type name="QwtMatrixRasterData">
+    <enum-type name="ResampleMode"/>
+  </object-type>
+
+  <object-type name="QwtPlotDirectPainter">
+    <enum-type name="Attribute"/>
+  </object-type>
+
+  <object-type name="QwtPlotHistogram">
+    <enum-type name="HistogramStyle"/>
+  </object-type>
+
+  <object-type name="QwtPlotIntervalCurve">
+    <enum-type name="CurveStyle"/>
+    <enum-type name="PaintAttribute"/>
+  </object-type>
+
+  <object-type name="QwtPlotRenderer">
+    <enum-type name="DiscardFlag"/>
+    <enum-type name="LayoutFlag"/>
+  </object-type>
+
+  <object-type name="QwtPlotSpectroCurve">
+    <enum-type name="PaintAttribute"/>
+  </object-type>
+
+  <object-type name="QwtSamplingThread" />
+  <object-type name="QwtSystemClock" />
+  <object-type name="QwtNullPaintDevice" />
+
 </typesystem>
 
